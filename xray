@@ -115,24 +115,6 @@ IMAGE="xray:latest"
 # check if docker images exists locally in order to hide "Unable to find image locally" message
 #docker inspect ${IMAGE} &>/dev/null || docker pull ${IMAGE}
 
-echo 1 $DOCKER_RUN_OPTIONS
-echo 2 $DOCKER_ADDR
-echo 3 $XRAY_VOLUMES
-echo 4 $XRAY_HA_PROPS
-echo 5 $USE_DEFAULTS
-echo 6 $XRAY_DOCKER_REPO
-echo 7 $DOCKER_INSTALLER_OFFLINE
-echo 8 $XRAYDB_DOCKER_REPO
-echo 9 $XRAY_VERSION
-echo 10 $SERVER_FLAG
-echo 11 $XRAY_MOUNT_ROOT
-echo 12 $DOCKER_SERVER_CURRENT_VER
-echo 13 $DOCKER_SERVER_HOSTNAME
-echo 14 $DOCKER_SERVER_FQDN
-echo 15 $INSTALLATION_LOG_FILE
-echo 16 $DOCKER_RUN_OPTIONS_ENV
-echo 17 $IMAGE
-
 exec docker run --rm $DOCKER_RUN_OPTIONS $DOCKER_ADDR $XRAY_VOLUMES $XRAY_HA_PROPS \
                 -e USE_DEFAULTS=$USE_DEFAULTS \
                 -e URL_POSTGRES=$URL_POSTGRES \
